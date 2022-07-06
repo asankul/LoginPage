@@ -12,9 +12,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var usernameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    private let username = "User"
-    private let password = "Password"
-    
+    private let persons = User.getPersons()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTF.isSecureTextEntry = true
@@ -27,12 +26,28 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.username = usernameTF.text
+        guard let tabBarVC = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarVC.viewControllers else { return }
+        
+        viewControllers.forEach { viewController in
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.username = persons.filter{$0.username == usernameTF.text}[0].persons[0].name
+            } else if let aboutMeVC = viewController as? AboutMeViewController {
+                aboutMeVC.usersName = persons.filter{$0.username == usernameTF.text}[0].persons[0].name
+                aboutMeVC.usersJob = persons.filter{$0.username == usernameTF.text}[0].persons[0].job
+                aboutMeVC.usersPhone = persons.filter{$0.username == usernameTF.text}[0].persons[0].phone
+                aboutMeVC.usersCountry = persons.filter{$0.username == usernameTF.text}[0].persons[0].country
+                aboutMeVC.usersDescription = persons.filter{$0.username == usernameTF.text}[0].persons[0].description
+            } else if let navigationVC = viewController as? UINavigationController {
+                guard let myDescriptionVC = navigationVC.topViewController as? DescriptionViewController else { return }
+                myDescriptionVC.userDescription = persons.filter{$0.username == usernameTF.text}[0].persons[0].description
+            }
+        }
     }
     
     @IBAction func loginButtonPressed() {
-        if usernameTF.text != username || passwordTF.text != password {
+        if persons.filter({$0.username == usernameTF.text}).isEmpty ||
+            persons.filter({$0.password == passwordTF.text}).isEmpty {
             showAlert(
                 with: "Invalid login or password",
                 and: "Please enter correct login or password",
@@ -41,12 +56,8 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func forgotUserNamePressed() {
-        showAlert(with: "Oops!", and: "Your user name is \(username) 😝")
-    }
-    
-    @IBAction func forgotPasswordPressed() {
-        showAlert(with: "Oops!", and: "Your password is \(password) 😝")
+    @IBAction func forgotButtonPressed() {
+        showAlert(with: "Oops!", and: "Check the modal form 😝")
     }
 
     @IBAction func unwind(for segue: UIStoryboardSegue) {
