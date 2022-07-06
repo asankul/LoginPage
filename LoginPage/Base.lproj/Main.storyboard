@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="GpP-63-RrW">
-                                <rect key="frame" x="16" y="346.66666666666669" width="396" height="232.66666666666669"/>
+                                <rect key="frame" x="16" y="347.66666666666669" width="396" height="231.00000000000006"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EiQ-Ek-3CR">
                                         <rect key="frame" x="0.0" y="0.0" width="396" height="34"/>
@@ -41,24 +41,22 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xMW-sL-mb9">
-                                        <rect key="frame" x="0.0" y="202.99999999999994" width="396" height="29.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="202.99999999999994" width="396" height="28"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvq-pv-00Y">
-                                                <rect key="frame" x="0.0" y="0.0" width="190.66666666666666" height="29.666666666666668"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Forgot User Name?">
-                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleCallout"/>
-                                                </buttonConfiguration>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvq-pv-00Y">
+                                                <rect key="frame" x="0.0" y="0.0" width="189.33333333333334" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Forgot User Name?"/>
                                                 <connections>
                                                     <action selector="forgotUserNamePressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="HDq-FR-1bH"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzH-A3-3l9">
-                                                <rect key="frame" x="210.66666666666663" y="0.0" width="185.33333333333337" height="29.666666666666668"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
-                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleCallout"/>
-                                                </buttonConfiguration>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzH-A3-3l9">
+                                                <rect key="frame" x="209.33333333333337" y="0.0" width="186.66666666666663" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Forgot Password?"/>
                                                 <connections>
                                                     <action selector="forgotPasswordPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ez-dA-zdO"/>
                                                 </connections>

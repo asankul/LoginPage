@@ -12,7 +12,6 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var welcomeLabel: UILabel!
     
     var username: String!
-    var password: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
